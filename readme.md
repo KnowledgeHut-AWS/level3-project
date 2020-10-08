@@ -21,7 +21,7 @@ All work is to be done in KH's AWS estate. The estate is open from 6am to 12pm, 
 
 If you finish work earlier than that, please bring down your estate.
 
-## Meetings
+### Meetings
 There will be no zoom meetings during the project period.
 
 ## Deliverables
