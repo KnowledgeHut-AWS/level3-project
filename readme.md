@@ -19,6 +19,11 @@ Your work should be fully automatable at all times. The instructor will run chao
 ### Hours
 All work is to be done in KH's AWS estate. The estate is open from 6am to 12pm, and any running machines will be culled immediately at 12pm every night without fail, and new machines cannot be created until 6am the next morning. This is to ensure that those of you who don't need a lot of sleep do not have an unfair advantage over those that need more.
 
+If you finish work earlier than that, please bring down your estate.
+
+## Meetings
+There will be no zoom meetings during the project period.
+
 ## Deliverables
 A single github repo containing all of your work. The root of the repo will have a readme containing directions on using the repo, and links to the other requried documents. You must have a documents folder containing a tasks.md file which hosts screenshots of your kanban board (see 'method') along with a dairy.md file where you must keep daily notes as to your progress and any blockers you have discovered and overcome.
 
@@ -27,9 +32,13 @@ Your repo must be stand-alone and runnable in the sandbox using only the 'make u
 ## Infra
 You will run your project on the sandbox in k3d -- the techniques you demonstrate on this infra are exactly the same as with a fully distributed kubernetes instance, but its faster and easier so this will suffice.
 
+Please start with an XLarge instance, and increase the size of it if only when you have memory or other performance issues.
+
 ## Platform
 You will run whatever platform level components that you see fit. As a minimum, we expect to see Tekton as an automation controller, Vault for secrets, ELF for logging, and Prometheus for monitoring.
 
 ## Namespaces
 You will deploy the app's microservices to 'test' and 'prod' namespaces. The ci/cd tools will be in a cicd namespace. The other platform components will be in appropriately named spaces. The k8s-sandbox is suitably configured for tooling, but doesn't have a 'test' or 'prod' namespace.
 
+## Schedule
+The project must be completed by 21st of November. You will present it on the 22nd and 23rd with 5 minute presentations demonstrating the working system.
