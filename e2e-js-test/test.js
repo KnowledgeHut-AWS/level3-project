@@ -1,4 +1,3 @@
-(function (){
   'use strict';
 
   var express    = require("express")
@@ -11,7 +10,8 @@
     , assert     = require("assert")
     , expect     = chai.expect
     , helpers    = require("./helpers.js")
-    , app
+    , app;
+
 
   describe("helpers", function() {
     before(function() {
@@ -218,4 +218,3 @@
       });
     });
   });
- }());
