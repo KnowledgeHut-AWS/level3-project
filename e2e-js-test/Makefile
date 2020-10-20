@@ -12,3 +12,7 @@ test:
 chrome:
 	docker run -it --rm -v "$$(pwd)":/app -w /app node4 npm install --save chrome-remote-interface chrome-launcher mocha
 
+upgrade:
+	docker run -it --rm -v "$$(pwd)":/app -w /app node4 jscodeshift -t sinon-codemod/migrate-to-v5 .
+
+
