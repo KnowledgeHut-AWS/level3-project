@@ -12,8 +12,11 @@
     "body-parser": "^1.19.0",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "chrome-launcher": "^0.13.4",
+    "chrome-remote-interface": "^0.28.2",
     "express": "^4.17.1",
     "http": "0.0.1-security",
+    "mocha": "^8.2.0",
     "request": "^2.88.2",
     "sinon": "^9.2.0"
   }

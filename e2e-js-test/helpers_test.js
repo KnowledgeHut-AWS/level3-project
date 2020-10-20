@@ -8,6 +8,7 @@
     , chai       = require("chai")
     , chaiHttp   = require("chai-http")
     , sinon      = require("sinon")
+    , assert     = require("assert")
     , expect     = chai.expect
     , helpers    = require("./helpers.js")
     , app
