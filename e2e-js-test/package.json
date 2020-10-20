@@ -1,13 +1,8 @@
 {
-  "name": "e2e-js-test",
+  "name": "app",
   "version": "1.0.0",
   "description": "",
-  "main": "helpers_test.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "main": "helpers.js",
   "dependencies": {
     "body-parser": "^1.19.0",
     "chai": "^4.2.0",
@@ -16,8 +11,15 @@
     "chrome-remote-interface": "^0.28.2",
     "express": "^4.17.1",
     "http": "0.0.1-security",
-    "mocha": "^8.2.0",
     "request": "^2.88.2",
     "sinon": "^9.2.0"
-  }
+  },
+  "devDependencies": {
+    "mocha": "^8.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC"
 }

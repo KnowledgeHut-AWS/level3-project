@@ -1,18 +1,25 @@
 default: build
 
-install:
-	docker run -it --rm -v "$$(pwd)":/app -w /app node4 npm install
-	
 build:
 	docker build --tag node4 .
 
 test:
 	docker run -it --rm -v "$$(pwd)":/app -w /app node4 mocha test.js
 
-chrome:
-	docker run -it --rm -v "$$(pwd)":/app -w /app node4 npm install --save chrome-remote-interface chrome-launcher mocha
+init:
+	docker run -it --rm -v "$$(pwd)":/app -w /app node4 npm init
+
+
+install:
+	docker run -it --rm -v "$$(pwd)":/app -w /app node4 npm install
+	
+npm:
+	docker run -it --rm -v "$$(pwd)":/app -w /app node4 npm install --save chrome-remote-interface chrome-launcher mocha express request body-parser sinon chai chai-http http 
 
 upgrade:
-	docker run -it --rm -v "$$(pwd)":/app -w /app node4 jscodeshift -t sinon-codemod/migrate-to-v5 .
+	docker run -it --rm -v "$$(pwd)":/app -w /app node4 jscodeshift -t tmp/sinon-codemod/migrate-to-v5.js *.js
+	docker run -it --rm -v "$$(pwd)":/app -w /app node4 jscodeshift -t tmp/sinon-codemod/migrate-to-v5.js e2e/*.js
+	docker run -it --rm -v "$$(pwd)":/app -w /app node4 jscodeshift -t tmp/sinon-codemod/extract-calls-fake.js e2e/*.js
+	docker run -it --rm -v "$$(pwd)":/app -w /app node4 jscodeshift -t tmp/sinon-codemod/extract-calls-fake.js *.js
 
 
