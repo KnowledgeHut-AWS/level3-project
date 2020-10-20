@@ -1,10 +1,14 @@
 FROM mongo:3
-ADD ./scripts /tmp/scripts
+
+copy ./scripts /tmp/scripts
 
 # Modify child mongo to use /data/db-accounts as dbpath (because /data/db wont persist the build because it is already a VOLUME)
 RUN mkdir -p /data/db-users \
     && echo "dbpath = /data/db-users" > /etc/mongodb.conf \
     && chown -R mongodb:mongodb /data/db-users
+
+
+run chmod a+rwx /tmp && chmod a+rwx /tmp/scripts && chmod a+rwx /tmp/scripts/*
 
 RUN su - mongodb && mongod --fork --logpath /var/log/mongodb.log --dbpath /data/db-users  \
     && /tmp/scripts/mongo_create_insert.sh \

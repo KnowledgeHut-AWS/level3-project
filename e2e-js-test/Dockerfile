@@ -1,7 +1,8 @@
-FROM node:4-alpine
+FROM node:alpine
 
-RUN apk update && apk add make
+RUN apk add make git curl jq
 
-RUN npm install -g phantomjs-prebuilt
+run npm install chrome-remote-interface --save && \
+    npm install chrome-launcher --save
 RUN npm install -g casperjs
 

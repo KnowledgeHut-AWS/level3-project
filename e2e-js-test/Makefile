@@ -6,3 +6,8 @@ build:
 
 run:
 	docker run -it --rm -v "$$(pwd)":/app -w /app node4 node helpers_test.js
+
+chrome:
+	docker run -it --rm -v "$$(pwd)":/app -w /app node4 npm install chrome-remote-interface --save
+	docker run -it --rm -v "$$(pwd)":/app -w /app node4 npm install chrome-launcher --save
+
