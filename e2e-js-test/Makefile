@@ -6,6 +6,9 @@ build:
 test:
 	docker run -it --rm -v "$$(pwd)":/app -w /app node4 mocha test.js
 
+itest:
+	cd e2e && docker run -it --rm -v "$$(pwd)":/app -w /app node4 casperjs test cart_test.js
+
 init:
 	docker run -it --rm -v "$$(pwd)":/app -w /app node4 npm init
 
